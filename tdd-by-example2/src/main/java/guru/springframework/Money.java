@@ -9,16 +9,30 @@ package guru.springframework;
 *   como super classes a outras classes do Java.
 */
 public abstract class Money {
+    // Aqui abaixo estão os atributos que as classes que herdarem desta devem ter
     protected int amount;
+    protected String currency;
 
+    // Constructor da nossa classe pai
+    public Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
+
+    // Aqui encontramos os métodos que as classes que herdarem desta deverão ter ou poderão usar
+    // Este primeiro é para mostrar o tipo da moeda
+    protected String currency() {
+        return currency;
+    };
+    // Este é para calcular uma multiplicação do dinheiro em si
     public abstract Money times(int multiplier);
 
     public static Money dollar(int amount) {
-        return new Dollar(amount);
+        return new Dollar(amount, "USD");
     }
 
     public static Money franc(int amount) {
-        return new Franc(amount);
+        return new Franc(amount, "CHF");
     }
 
     public boolean equals(Object object) {
