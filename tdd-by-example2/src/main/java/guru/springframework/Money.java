@@ -8,7 +8,7 @@ package guru.springframework;
 *   as classes abstratas possuem o único propósito de servirem
 *   como super classes a outras classes do Java.
 */
-public abstract class Money {
+public class Money {
     // Aqui abaixo estão os atributos que as classes que herdarem desta devem ter
     protected int amount;
     protected String currency;
@@ -24,8 +24,6 @@ public abstract class Money {
     protected String currency() {
         return currency;
     };
-    // Este é para calcular uma multiplicação do dinheiro em si
-    public abstract Money times(int multiplier);
 
     public static Money dollar(int amount) {
         return new Dollar(amount, "USD");
@@ -37,6 +35,18 @@ public abstract class Money {
 
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return amount == money.amount && this.getClass().equals(object.getClass());
+        return amount == money.amount && this.currency == money.currency;
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
+
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, this.currency);
     }
 }
