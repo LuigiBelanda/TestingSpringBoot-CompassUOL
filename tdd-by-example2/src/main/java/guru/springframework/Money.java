@@ -8,7 +8,7 @@ package guru.springframework;
 *   as classes abstratas possuem o único propósito de servirem
 *   como super classes a outras classes do Java.
 */
-public class Money {
+public class Money implements Expression {
     // Aqui abaixo estão os atributos que as classes que herdarem desta devem ter
     protected int amount;
     protected String currency;
@@ -39,6 +39,11 @@ public class Money {
     }
 
     @Override
+    public Money reduce(String to) {
+        return this;
+    }
+
+    @Override
     public String toString() {
         return "Money{" +
                 "amount=" + amount +
@@ -48,5 +53,9 @@ public class Money {
 
     public Money times(int multiplier) {
         return new Money(amount * multiplier, this.currency);
+    }
+
+    public Expression plus(Money addend) {
+        return new Sum(this, addend);
     }
 }
