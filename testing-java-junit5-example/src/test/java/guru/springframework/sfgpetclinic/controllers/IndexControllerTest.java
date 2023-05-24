@@ -30,10 +30,10 @@ class IndexControllerTest {
 
         assertEquals("index", controller.index(), () -> "Another Expensive Message " + " Make me only if you have to");
 
-        assertThat(controller.index()).isEqualTo("index"));
+        assertThat(controller.index()).isEqualTo("index");
     }
 
-    @DisplayName("Test exeception")
+    @DisplayName("Test exception")
     @Test
     void oopsHandler() {
         // Aqui podemos testar se estamos recebendo a exception certa
