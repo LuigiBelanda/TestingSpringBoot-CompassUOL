@@ -7,5 +7,8 @@ import org.junit.jupiter.api.TestInfo;
 
 @Tag("Model")
 public interface ModelTests {
-
+    @BeforeEach
+    default void beforeEachConsoleOutputer(TestInfo testInfo, RepetitionInfo repetitionInfo) {
+        System.out.println("Running Test - " + testInfo.getDisplayName());
+    }
 }
