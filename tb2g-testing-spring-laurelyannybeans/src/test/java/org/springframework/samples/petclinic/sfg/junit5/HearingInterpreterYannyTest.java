@@ -10,9 +10,9 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringJUnitConfig(classes = {BaseConfig.class, YannyConfig.class})
-class HearingInterpreterLaurelTest {
+class HearingInterpreterYannyTest {
     @Autowired
-    HearingInterpreter hearingInterpreter
+    HearingInterpreter hearingInterpreter;
 
     @Test
     void whatIheard() {
