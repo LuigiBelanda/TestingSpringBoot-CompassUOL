@@ -19,7 +19,9 @@ import org.springframework.stereotype.Component;
 /**
  * Created by jt on 2019-02-16.
  */
+@Profile("yanny")
 @Component
+@Primary
 public class YannyWordProducer implements WordProducer {
     @Override
     public String getWord() {

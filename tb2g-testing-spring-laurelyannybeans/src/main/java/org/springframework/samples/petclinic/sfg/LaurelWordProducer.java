@@ -24,7 +24,6 @@ package org.springframework.samples.petclinic.sfg;
  * Created by jt on 2019-02-16.
  */
 @Component
-@Primary
 public class LaurelWordProducer implements WordProducer {
     @Override
     public String getWord() {

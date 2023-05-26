@@ -30,11 +30,16 @@ package org.springframework.samples.petclinic.sfg.junit5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.samples.petclinic.sfg.HearingInterpreter;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ActiveProfiles("component-scan")
+@SpringJUnitConfig(classes = HearingInterpreterComponentTest.TestConfig.class)
 class HearingInterpreterComponentTest {
 
+    @Profile("component-scan")
     @Configuration
     @ComponentScan("org.springframework.samples.petclinic.sfg")
     static class TestConfig {

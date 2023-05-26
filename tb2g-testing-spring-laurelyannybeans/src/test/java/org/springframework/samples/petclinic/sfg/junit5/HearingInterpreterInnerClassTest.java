@@ -35,12 +35,15 @@ package org.springframework.samples.petclinic.sfg.junit5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.samples.petclinic.sfg.*;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ActiveProfiles("inner-class")
 @SpringJUnitConfig(classes = HearingInterpreterInnerClassTest.TestConfig.class)
 class HearingInterpreterInnerClassTest {
+    @Profile("inner-class")
     @Configuration
     static class TestConfig {
         @Bean
