@@ -21,10 +21,13 @@ do bean. Essa configuração permite que outros componentes do Spring possam uti
 
 package org.springframework.samples.petclinic.sfg;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 @Configuration
 public class BaseConfig {
     @Bean
-    HearingInterprter hearingInterprter(WordProducer wordProducer) {
-        return new HearingInterprter(wordProducer);
+    HearingInterpreter hearingInterprter(WordProducer wordProducer) {
+        return new HearingInterpreter(wordProducer);
     }
 }

@@ -30,7 +30,6 @@ carregar o contexto e permitir a injeção de dependências necessária para exe
 
 package org.springframework.samples.petclinic.sfg;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -40,13 +39,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {BaseConfig.class, LaurelConfig.class})
-class HearingInterprterTest {
+class HearingInterpreterLaurelTest {
     @Autowired
-    HearingInterprter hearingInterprter;
+    HearingInterpreter hearingInterpreter;
 
     @Test
     public void whatIHeard() {
-        String word = hearingInterprter.whatIheard();
+        String word = hearingInterpreter.whatIheard();
         assertEquals("Laurel", word);
     }
 }

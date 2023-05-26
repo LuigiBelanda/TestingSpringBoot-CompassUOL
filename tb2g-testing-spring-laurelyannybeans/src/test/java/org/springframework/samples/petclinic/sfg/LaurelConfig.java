@@ -21,6 +21,9 @@ componentes que dependem de um `WordProducer`, como no exemplo anterior do `Hear
 
 package org.springframework.samples.petclinic.sfg;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 @Configuration
 public class LaurelConfig {
     LaurelWordProducer laurelWordProducer() {
